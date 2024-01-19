@@ -2,6 +2,8 @@ function onReady() {
     // console.log('javascript runs');
 }
 
+let totalSalaries = 0;
+
 function addEmployee(event) {
     event.preventDefault();
     let firstNameElement = document.getElementById('first_name');
@@ -20,6 +22,9 @@ function addEmployee(event) {
         <td></td>
       </tr>
     `;
+    totalSalaries += Number(annualSalaryElement.value);
+    let monthlyTotalSpan = document.getElementById('monthly_total');
+    monthlyTotalSpan.innerText = totalSalaries / 12;
 }
 
 onReady();
