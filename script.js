@@ -11,6 +11,7 @@ function addEmployee(event) {
     let employeeIDElement = document.getElementById('employee_id');
     let employeeTitleElement = document.getElementById('employee_title');
     let annualSalaryElement = document.getElementById('annual_salary');
+    // add new employee row
     let tableBody = document.querySelector('tbody');
     tableBody.innerHTML += `
       <tr>
@@ -22,9 +23,16 @@ function addEmployee(event) {
         <td></td>
       </tr>
     `;
+    // update monthly total
     totalSalaries += Number(annualSalaryElement.value);
     let monthlyTotalSpan = document.getElementById('monthly_total');
     monthlyTotalSpan.innerText = totalSalaries / 12;
+    // clear form inputs
+    firstNameElement.value = '';
+    lastNameElement.value = '';
+    employeeIDElement.value = '';
+    employeeTitleElement.value = '';
+    annualSalaryElement.value = '';
 }
 
 onReady();
