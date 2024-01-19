@@ -33,6 +33,11 @@ function addEmployee(event) {
     employeeIDElement.value = '';
     employeeTitleElement.value = '';
     annualSalaryElement.value = '';
+    // check if over budget
+    let footerElement = document.querySelector('footer');
+    if (totalSalaries / 12 > 20000) {
+      footerElement.classList.add('over-budget');
+    }
 }
 
 onReady();
