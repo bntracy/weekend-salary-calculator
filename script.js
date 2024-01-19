@@ -20,7 +20,7 @@ function addEmployee(event) {
         <td>${employeeIDElement.value}</td>
         <td>${employeeTitleElement.value}</td>
         <td>$${annualSalaryElement.value}</td>
-        <td></td>
+        <td><button onclick="deleteEmployee(event)">Delete</button></td>
       </tr>
     `;
     // update monthly total
@@ -38,6 +38,10 @@ function addEmployee(event) {
     if (totalSalaries / 12 > 20000) {
       footerElement.classList.add('over-budget');
     }
+}
+
+function deleteEmployee(event) {
+  event.target.parentElement.parentElement.remove();
 }
 
 onReady();
