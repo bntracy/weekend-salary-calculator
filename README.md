@@ -1,9 +1,15 @@
 # Project Name
 
-[Project Instructions](./INSTRUCTIONS.md), this line may be removed once you have updated the README.md
+Salary Calculator
 
 ## Description
 
-Your project description goes here. What problem did you solve? How did you solve it?
+Accepts as input employee name, id number, title, and annual salary.
 
-Additional README details can be found [here](https://github.com/PrimeAcademy/readme-template/blob/master/README.md).
+Displays this information in a table.
+
+Calculates the total monthly salary budget.
+
+Visually alerts the user via red text if the monthly budget is over $20,000.
+
+Employees can be deleted from the table. The monthly budget will update accordingly.
