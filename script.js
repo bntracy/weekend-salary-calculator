@@ -29,7 +29,7 @@ function addEmployee(event) {
         <td>${employeeIDElement.value}</td>
         <td>${employeeTitleElement.value}</td>
         <td>${salaryFormatter.format(annualSalaryElement.value)}</td>
-        <td><button onclick="deleteEmployee(event)">Delete</button></td>
+        <td><button onclick="deleteEmployee(event, ${annualSalaryElement.value})">Delete</button></td>
       </tr>
     `;
     // update monthly total
@@ -49,8 +49,16 @@ function addEmployee(event) {
     }
 }
 
-function deleteEmployee(event) {
+function deleteEmployee(event, salary) {
+  // delete employee
   event.target.parentElement.parentElement.remove();
+  // update monthly total
+  totalSalaries -= salary;
+  let footerElement = document.querySelector('footer');
+  footerElement.innerHTML = 'Total Monthly: ' + totalFormatter.format(totalSalaries / 12);
+  if (footerElement.classList.contains('over-budget') && totalSalaries / 12 <= 20000) {
+    footerElement.classList.remove('over-budget');
+  }
 }
 
 onReady();
