@@ -3,6 +3,15 @@ function onReady() {
 }
 
 let totalSalaries = 0;
+const totalFormatter = new Intl.NumberFormat('en-US', {
+  style: 'currency',
+  currency: 'USD'
+});
+const salaryFormatter = new Intl.NumberFormat('en-US', {
+  style: 'currency',
+  currency: 'USD',
+  maximumFractionDigits: 0
+});
 
 function addEmployee(event) {
     event.preventDefault();
@@ -19,14 +28,14 @@ function addEmployee(event) {
         <td>${lastNameElement.value}</td>
         <td>${employeeIDElement.value}</td>
         <td>${employeeTitleElement.value}</td>
-        <td>$${annualSalaryElement.value}</td>
+        <td>${salaryFormatter.format(annualSalaryElement.value)}</td>
         <td><button onclick="deleteEmployee(event)">Delete</button></td>
       </tr>
     `;
     // update monthly total
     totalSalaries += Number(annualSalaryElement.value);
-    let monthlyTotalSpan = document.getElementById('monthly_total');
-    monthlyTotalSpan.innerText = totalSalaries / 12;
+    let footerElement = document.querySelector('footer');
+    footerElement.innerHTML = 'Total Monthly: ' + totalFormatter.format(totalSalaries / 12);
     // clear form inputs
     firstNameElement.value = '';
     lastNameElement.value = '';
@@ -34,7 +43,7 @@ function addEmployee(event) {
     employeeTitleElement.value = '';
     annualSalaryElement.value = '';
     // check if over budget
-    let footerElement = document.querySelector('footer');
+    
     if (totalSalaries / 12 > 20000) {
       footerElement.classList.add('over-budget');
     }
