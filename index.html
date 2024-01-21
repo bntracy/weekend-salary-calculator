@@ -13,12 +13,14 @@
   <main>
     <h2>Add Employee</h2>
     <form onsubmit="addEmployee(event)">
-      <input type="text" id="first_name" placeholder="First Name" data-testid="firstNameInput">
-      <input type="text" id="last_name" placeholder="Last Name" data-testid="lastNameInput">
-      <input type="number" id="employee_id" placeholder="ID" data-testid="idInput">
-      <input type="text" id="employee_title" placeholder="Title" data-testid="titleInput">
-      <input type="number" id="annual_salary" placeholder="Annual Salary" data-testid="annualSalaryInput">
-      <button type="submit" data-testid="submitButton">Submit</button>
+      <div class="container">
+        <input type="text" id="first_name" placeholder="First Name" data-testid="firstNameInput">
+        <input type="text" id="last_name" placeholder="Last Name" data-testid="lastNameInput">
+        <input type="number" id="employee_id" placeholder="ID" data-testid="idInput">
+        <input type="text" id="employee_title" placeholder="Title" data-testid="titleInput">
+        <input type="number" id="annual_salary" placeholder="Annual Salary" data-testid="annualSalaryInput">
+        <button type="submit" data-testid="submitButton">Submit</button>
+      </div>
     </form>
     <h2>Employees</h2>
     <table>

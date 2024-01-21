@@ -31,7 +31,7 @@ main {
 form button {
     display: block;
     margin-top: 10px;
-    margin-left: 725px;
+    margin-left: auto;
 }
 
 table {
@@ -69,4 +69,8 @@ footer {
 
 td:nth-child(6) {
     text-align: center;
+}
+
+.container {
+    width: 785px;
 }
