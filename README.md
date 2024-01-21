@@ -1,6 +1,4 @@
-# Project Name
-
-Salary Calculator
+# Salary Calculator
 
 ## Description
 

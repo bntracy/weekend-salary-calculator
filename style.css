@@ -72,5 +72,5 @@ td:nth-child(6) {
 }
 
 .container {
-    width: 785px;
+    display: inline-block;
 }
